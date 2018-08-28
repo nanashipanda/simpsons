@@ -15,11 +15,16 @@ with open(annotation_txt, encoding='utf8') as f:
         down = int(line[4])
         name = line[5]
 
+        # Pattern 1
         print(os.path.join(data_path, img_path))
         img = Image.open(os.path.join(data_path, img_path))
         if left >= right:
             right = left+1
         if up >= down:
             down = up+1
-        trim = img.crop((int(left), int(up), int(right), int(down)))
+        trim = img.crop((left, up, right, down))
         trim.save(os.path.join(trim_path, img_path[-12:]), quality=95)
+
+        ## ToDo ##
+        ## Confirm Pattern2 ##
+        ## right = left + right ## 

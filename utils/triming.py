@@ -9,7 +9,7 @@ x2,y2 : lower right corner
 '''
 
 data_path = '/home/maa/ecs_20180904/data/'
-trim_path = os.path.join(data_path, 'all_data')
+trim_path = os.path.join(data_path, 'trim_data')
 annotation = os.path.join(data_path, 'annotation.txt')
 
 with open(annotation, encoding='utf8') as f:
